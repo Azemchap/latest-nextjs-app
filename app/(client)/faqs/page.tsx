@@ -1,6 +1,8 @@
 'use client'
+import { cn } from '@/lib/utils'
 import { Disclosure } from '@headlessui/react'
-import { ChevronDownIcon } from '@heroicons/react/outline'
+import { ChevronDown } from 'lucide-react'
+import Link from 'next/link'
 import React from 'react'
 
 /* This example requires Tailwind CSS v2.0+ */
@@ -124,9 +126,6 @@ const faqs = [
 
 ]
 
-function classNames(...classes) {
-    return classes.filter(Boolean).join(' ')
-}
 
 export default function FaqsPage() {
     return (
@@ -143,8 +142,8 @@ export default function FaqsPage() {
                                             <Disclosure.Button className="text-left w-full flex justify-between items-start text-gray-400">
                                                 <span className="font-medium text-gray-900">{faq.question}</span>
                                                 <span className="ml-6 h-7 flex items-center">
-                                                    <ChevronDownIcon
-                                                        className={classNames(open ? '-rotate-180' : 'rotate-0', 'h-6 w-6 transform')}
+                                                    <ChevronDown
+                                                        className={cn(open ? '-rotate-180' : 'rotate-0', 'h-6 w-6 transform')}
                                                         aria-hidden="true"
                                                     />
                                                 </span>
@@ -174,9 +173,9 @@ export default function FaqsPage() {
                                 <ul role="list" className="mt-4 space-y-4">
                                     {navigation.solutions.map((item) => (
                                         <li key={item.name}>
-                                            <a href={item.href} className="text-base text-gray-500 hover:text-gray-900">
+                                            <Link href={'#'} className="text-base text-gray-500 hover:text-gray-900">
                                                 {item.name}
-                                            </a>
+                                            </Link>
                                         </li>
                                     ))}
                                 </ul>
@@ -187,9 +186,9 @@ export default function FaqsPage() {
                                 <ul role="list" className="mt-4 space-y-4">
                                     {navigation.solutions2.map((item) => (
                                         <li key={item.name}>
-                                            <a href={item.href} className="text-base text-gray-500 hover:text-gray-900">
+                                            <Link href={'#'} className="text-base text-gray-500 hover:text-gray-900">
                                                 {item.name}
-                                            </a>
+                                            </Link>
                                         </li>
                                     ))}
                                 </ul>
@@ -202,9 +201,9 @@ export default function FaqsPage() {
                                 <ul role="list" className="mt-4 space-y-4">
                                     {navigation.company.map((item) => (
                                         <li key={item.name}>
-                                            <a href={item.href} className="text-base text-gray-500 hover:text-gray-900">
+                                            <Link href={'#'} className="text-base text-gray-500 hover:text-gray-900">
                                                 {item.name}
-                                            </a>
+                                            </Link>
                                         </li>
                                     ))}
                                 </ul>
@@ -214,18 +213,15 @@ export default function FaqsPage() {
                                 <ul role="list" className="mt-4 space-y-4">
                                     {navigation.support.map((item) => (
                                         <li key={item.name}>
-                                            <a href={item.href} className="text-base text-gray-500 hover:text-gray-900">
+                                            <Link href={'#'} className="text-base text-gray-500 hover:text-gray-900">
                                                 {item.name}
-                                            </a>
+                                            </Link>
                                         </li>
                                     ))}
                                 </ul>
                             </div>
-
                         </div>
                     </div>
-
-
                 </div>
             </div>
         </div>
